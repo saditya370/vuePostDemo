@@ -10,3 +10,8 @@ export async function getPost(id) {
   return res.json()
 }
 
+export async function deletePost(id) {
+  const res = await fetch(`${BASE}/${id}`, { method: 'DELETE' })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  return true
+}
